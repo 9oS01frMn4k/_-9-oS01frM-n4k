@@ -96,7 +96,7 @@ client.on("message", async message => {
  }
 
    if (cmd === `${prefix}help`){
-   message.reply('שולח לך בפרטי נודר');
+   message.reply('Please check your direct messages :mailbox_with_no_mail:');
    message.author.send(`${prefix}serverinfo - info about the server\n\
 ${prefix}report - report someone for breaking the server rules
 ${prefix}botinfo - info about the bot
