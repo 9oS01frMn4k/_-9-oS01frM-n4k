@@ -95,27 +95,6 @@ client.on("message", async message => {
    message.reply('Invite the bot to your server :wink: https://discordapp.com/oauth2/authorize?client_id=433340501111078922&scope=bot&permissions=20972552');
  }
 
-   if (cmd === `${prefix}report`){
-   var reportchannel = client.channels.get('435862363158085652');
-             var reporteduser = message.mentions.users.first().id;
-             var reportreason = message.content.split(' ').slice(3).join(' ');
-
-             if (!message.channel.id == '435861980079849472') {
-              return message.reply(`Please report someone in the \`reports\` channel!`);
-             }
-
-             if (message.author.id === reporteduser) {
-                 return message.reply('You cant punish yourself :wink:')
-             }
-
-             if (message.mentions.users.size < 1 || message.mentions.users.size > 1) {
-                 return message.reply('You need to mention someone to report him!')
-             }
-
-             reportchannel.send(`Maniak: ${message.author.tag}\nReported user: ${reporteduser}\nReason: ${reportreason}`);
-
-             message.reply(`We got your report! Thanks :heart:`);
-   }
    if (cmd === `${prefix}help`){
    message.reply('שולח לך בפרטי נודר');
    message.author.send(`${prefix}serverinfo - info about the server\n\
