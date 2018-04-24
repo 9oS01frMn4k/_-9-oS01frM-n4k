@@ -93,6 +93,10 @@ client.on("message", async message => {
    }
  if (cmd === `${prefix}invite`){
    message.reply('Invite the bot to your server :wink: https://discordapp.com/oauth2/authorize?client_id=433340501111078922&scope=bot&permissions=20972552');
+   footer: 
+      {
+          icon_url: client.user.avatarURL,
+          text: "PiggyBot" 
  }
 
    if (cmd === `${prefix}help`){
@@ -103,6 +107,10 @@ ${prefix}botinfo - info about the bot
 ${prefix}moveall (room) (-mute - if you want) - move members - only staff
 ${prefix}say (text) - The bot says what you say
 ${prefix}invite - invite the bot to your server by .invite`);
+     footer: 
+      {
+          icon_url: client.user.avatarURL,
+          text: "PiggyBot"
    }
 
 if (cmd === `${prefix}moveall`){
