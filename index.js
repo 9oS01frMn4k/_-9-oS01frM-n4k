@@ -108,7 +108,7 @@ ${prefix}invite - Invite the bot to your server`);
      }
      if (message.content.indexOf(".moveall") > -1) {
        channelGetName = message.content.slice(9, 9999);
-       findChannel = bot.channels.find('name', channelGetName);
+       findChannel = client.channels.find('name', channelGetName);
        if (message.content.indexOf("-mute") > -1) {
          MoveMuteUsers(findChannel);
        } else{
@@ -119,7 +119,7 @@ ${prefix}invite - Invite the bot to your server`);
    });
 
    function MoveUsers(findChannel){
-     bot.channels.findAll('type', 'voice').forEach(channelInfo => {
+     client.channels.findAll('type', 'voice').forEach(channelInfo => {
        if (channelInfo.name.indexOf("AFK") > -1 ){
          console.log("afk");
        } else {
@@ -132,7 +132,7 @@ ${prefix}invite - Invite the bot to your server`);
    }
 
    function MoveMuteUsers(findChannel){
-     bot.channels.findAll('type', 'voice').forEach(channelInfo => {
+     client.channels.findAll('type', 'voice').forEach(channelInfo => {
        if (channelInfo.name.indexOf("AFK") > -1 ){
          console.log("afk");
        } else {
