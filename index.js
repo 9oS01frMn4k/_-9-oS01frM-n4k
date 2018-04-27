@@ -36,10 +36,10 @@ client.on("message", async message => {
      .setDescription("Server Information")
      .setColor("#15f153")
      .setThumbnail(sicon)
-     .addField("שם השרת", message.guild.name)
+     .addField("Server Name", message.guild.name)
      .addField("Created On", message.guild.createdAt)
-     .addField("הצטרפת ב", message.member.joinedAt)
-     .addField("אנשים בטירה", message.guild.memberCount);
+     .addField("Joined At", message.member.joinedAt)
+     .addField("Members Count", message.guild.memberCount);
 
    return message.channel.send(serverembed);
  }
@@ -93,7 +93,9 @@ client.on("message", async message => {
 
    message.author.send(`${prefix}serverinfo - info about the server\n\
 ${prefix}report - report someone for breaking the server rules
-${prefix}botinfo - info about the bot`);
+${prefix}botinfo - info about the bot
+${prefix} say (text) - The Bot Say everything
+${prefix} moveall - move all members to one room - you can mute all by .moveall (room name) -mute`);
    }
 
    if (cmd === `${prefix}moveall`){
