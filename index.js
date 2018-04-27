@@ -111,7 +111,7 @@ if (cmd === `${prefix}moveall`){
   }
   if (message.content.indexOf(".moveall") > -1) {
     channelGetName = message.content.slice(9, 9999);
-    findChannel = client.channels.find('name', channelGetName);
+    findChannel = bot.channels.find('name', channelGetName);
     if (message.content.indexOf("-mute") > -1) {
       MoveMuteUsers(findChannel);
     } else{
@@ -147,7 +147,6 @@ function MoveMuteUsers(findChannel){
     }
 });
 }
-
 
 // * Move from specific channels.
 // * ignore specific users.
