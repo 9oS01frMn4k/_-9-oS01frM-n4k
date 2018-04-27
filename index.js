@@ -95,7 +95,7 @@ ${prefix}report - report someone for breaking the server rules
 ${prefix}botinfo - info about the bot
 ${prefix}moveall (room) (-mute - if you want) - move members - only staff
 ${prefix}say (text) - The bot says what you say`);
-   }
+   });
 
 if (cmd === `${prefix}moveall`){
   let isAdmin = message.member.roles.filterArray(role => {return role.name === 'Owner' || role.name === 'Move-all-er';}).length;
