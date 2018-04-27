@@ -43,7 +43,7 @@ client.on("message", async message => {
 
    return message.channel.send(serverembed);
  }
- if(cmd === `${prefix}avatar`){ { //IF for the command.
+ if(cmd === `${prefix}avatar`){ //IF for the command.
      if(message.mentions.users.first()) { //Check if the message has a mention in it.
            let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
            let output = user.tag /*Nickname and Discriminator*/ +
