@@ -59,7 +59,9 @@ client.on("message", async message => {
 
      return message.channel.send(botembed);
    }
-
+ if (cmd === `${prefix}invite`){
+   message.reply('Invite the bot to your server :wink: https://discordapp.com/oauth2/authorize?client_id=433340501111078922&scope=bot&permissions=20972552');
+ }
 
 
     if(cmd === `${prefix}report`){
@@ -94,8 +96,9 @@ client.on("message", async message => {
    message.author.send(`${prefix}serverinfo - info about the server\n\
 ${prefix}report - report someone for breaking the server rules
 ${prefix}botinfo - info about the bot
-${prefix} say (text) - The Bot Say everything
-${prefix} moveall - move all members to one room - you can mute all by .moveall (room name) -mute`);
+${prefix}say (text) - The Bot Say everything
+${prefix}moveall - move all members to one room - you can mute all by .moveall (room name) -mute
+${prefix}invite - Invite the bot to your server`);
    }
 
    if (cmd === `${prefix}moveall`){
