@@ -64,7 +64,7 @@ client.on("message", async message => {
  }
 if (cmd === `${prefix}say`){
   		message.delete()
-  		message.channel.send({embed})
+  		message.channel.send(" ")
  }
 
     if(cmd === `${prefix}report`){
