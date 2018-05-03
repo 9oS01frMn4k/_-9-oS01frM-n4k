@@ -64,7 +64,6 @@ client.on("message", async message => {
  }
 if (cmd === `${prefix}say`){
   		message.delete()
-          const embed = new Discord.RichEmbed()
   		message.channel.send({embed})
  }
 
