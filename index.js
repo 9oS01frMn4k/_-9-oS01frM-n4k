@@ -34,7 +34,7 @@ client.on("message", async message => {
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
      .setDescription("Server Information")
-     .setColor("#15f153")
+     .setColor("#0000FF")
      .setThumbnail(sicon)
      .addField("Server Name", message.guild.name)
      .addField("Created On", message.guild.createdAt)
@@ -111,7 +111,7 @@ client.on("message", async message => {
 }
 
    if (cmd === `${prefix}help`){
-   message.reply('שולח לך בפרטי נודר');
+   message.reply('Beep boop, check your dm :mailbox_with_mail: ');
 
    message.author.send(`${prefix}serverinfo - info about the server\n\
 ${prefix}report - report someone for breaking the server rules
