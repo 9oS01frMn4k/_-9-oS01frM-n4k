@@ -98,6 +98,18 @@ client.on("message", async message => {
 
     return;
    }
+    if (cmd === `${prefix}avatar`){
+   let user = message.mentions.users.first() || message.author; // Mention to get avatar or if no mention it will take author's avatar and send it!
+    
+    // avatar embed
+    let embed = new Discord.RichEmbed()
+    .setAuthor(`${user.username}'s Avatar`)
+    .setImage(user.displayAvatarURL) // User's Avatar
+    .setColor('RANDOM') // It will generate random colors now let's test it out!
+    // Sends the avatar embed in the channel.
+    message.channel.send(embed)
+}
+
    if (cmd === `${prefix}help`){
    message.reply('שולח לך בפרטי נודר');
 
@@ -106,7 +118,8 @@ ${prefix}report - report someone for breaking the server rules
 ${prefix}botinfo - info about the bot
 ${prefix}say (text) - The Bot Say everything
 ${prefix}moveall - move all members to one room - you can mute all by .moveall (room name) -mute
-${prefix}invite - Invite the bot to your server`);
+${prefix}invite - Invite the bot to your server
+${prefix}avatar - your/someone avatar`);
    }
 
    if (cmd === `${prefix}moveall`){
