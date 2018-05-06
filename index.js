@@ -62,10 +62,15 @@ client.on("message", async message => {
  if (cmd === `${prefix}invite`){
    message.reply('Invite the bot to your server :wink: https://discordapp.com/oauth2/authorize?client_id=433340501111078922&scope=bot&permissions=20972552');
  }
-if (cmd === `${prefix}say`){
-  		message.delete()
-  		message.channel.send(" ")
- }
+  if (cmd === `${prefix}say`){
+    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
+  }
 
     if(cmd === `${prefix}report`){
 
