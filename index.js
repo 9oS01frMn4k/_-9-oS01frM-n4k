@@ -28,11 +28,11 @@ client.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-if (message.author.id === bot.user.id) return;
+if (message.author.id === client.user.id) return;
   if (message.guild) {
  let embed = new Discord.RichEmbed()
   let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == .bc) {
+if(message.content.split(' ')[0] == prefix + 'bc') {
   if (!args[1]) {
 return;
 }
