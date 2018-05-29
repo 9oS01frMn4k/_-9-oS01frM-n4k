@@ -17,6 +17,17 @@ client.on("guildDelete", guild => {
         `${client.guilds.size} servers | .help`);
 });
 
+
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+
+  let prefix = process.env.BOT_PREFIX;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -39,18 +50,6 @@ return;
         return;
     }
 });
-
-client.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
-
-
-  let prefix = process.env.BOT_PREFIX;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-
-
 
   if(cmd === `${prefix}serverinfo`){
 
