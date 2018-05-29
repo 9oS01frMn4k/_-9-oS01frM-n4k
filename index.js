@@ -37,7 +37,8 @@ if(message.content.split(' ')[0] == prefix + 'bc') {
 return;
 }
       message.guild.members.forEach(m => {
- if(!message.member.hasPermission('ADMINISTRATOR')) return;
+  if (message.author.id !== ("184706878876549131"))
+    message.delete();
           var bc = new Discord.RichEmbed()
           .addField(' » Message: ', args)
           .setColor('#ff0000')
