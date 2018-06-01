@@ -28,6 +28,8 @@ client.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
+if (cmd === `${perfix}bc){
+  
 if (message.author.id === client.user.id) return;
   if (message.guild) {
  let embed = new Discord.RichEmbed()
