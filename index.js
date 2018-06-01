@@ -28,7 +28,6 @@ client.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-if (cmd === `${perfix}bc){
   
 if (message.author.id === client.user.id) return;
   if (message.guild) {
@@ -39,7 +38,9 @@ if(message.content.split(' ')[0] == prefix + 'bc') {
 return;
 }
       message.guild.members.forEach(m => {
-  if (message.author.id !== ("184706878876549131"))
+     let isAdmin = message.member.roles.filterArray(role => {return role.name === '𝓢𝓮𝓻𝓿𝓮𝓻 𝓞𝔀𝓷𝓮𝓻🤙 ' || role.name === '𝓢𝓮𝓻𝓿𝓮𝓻 𝓞𝔀𝓷𝓮𝓻🤙 ';}).length;
+     if (isAdmin === 0){
+       return;
     message.delete();
           var bc = new Discord.RichEmbed()
           .addField(' » Message: ', args)
