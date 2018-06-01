@@ -39,6 +39,7 @@ return;
 }
       message.guild.members.forEach(m => {
    if (message.author.id !== ("184706878876549131"))
+   if (message.author.id !== ("338385053556146187"))  
     message.delete();
           var bc = new Discord.RichEmbed()
           .addField(' » Message: ', args)
