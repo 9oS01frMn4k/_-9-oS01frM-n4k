@@ -38,9 +38,7 @@ if(message.content.split(' ')[0] == prefix + 'bc') {
 return;
 }
       message.guild.members.forEach(m => {
-     let isAdmin = message.member.roles.filterArray(role => {return role.name === '𝓢𝓮𝓻𝓿𝓮𝓻 𝓞𝔀𝓷𝓮𝓻🤙 ' || role.name === '𝓢𝓮𝓻𝓿𝓮𝓻 𝓞𝔀𝓷𝓮𝓻🤙 ';}).length;
-     if (isAdmin === 0){
-       return;
+   if (message.author.id !== ("184706878876549131"))
     message.delete();
           var bc = new Discord.RichEmbed()
           .addField(' » Message: ', args)
