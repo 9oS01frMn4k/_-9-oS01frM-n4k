@@ -74,20 +74,22 @@ message.channel.send(pollembed)
    }).catch(function() {
 });
 }
-  if(cmd === `${prefix}serverinfo`){
-
-    let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
-     .setDescription("Server Information")
-     .setColor("#0000FF")
-     .setThumbnail(sicon)
-     .addField("Server Name", message.guild.name)
-     .addField("Created On", message.guild.createdAt)
-     .addField("Joined At", message.member.joinedAt)
-     .addField("Members Count", message.guild.memberCount);
-
-   return message.channel.send(serverembed);
- }
+if(message.content.startsWith(prefix + 'serverinfo')) {
+const vlevel = ['None', 'Low (Must have verified email)', 'Medium (Must be register for 5 mineuts)', 'High (Need to wait 10 minutes)', 'Very High (Need verified phone on account)']
+const members = await message.guild.members.filter(m=> m.presence.status === 'online').size + message.guild.members.filter(m=> m.presence.status === 'idle').size + message.guild.members.filter(m=> m.presence.status === 'dnd').size
+message.channel.send(new Discord.RichEmbed()
+.setAuthor(`${message.guild.name} [Server Icon URL]`, message.guild.iconURL)
+.setURL(message.guild.iconURL)
+.addField('🆔 Server ID', message.guild.id, true)
+.addField('👑 Server Owner', message.guild.owner, true)
+.addField('🗺 Region', message.guild.region, true)
+.addField(`👥 Members [${message.guild.memberCount}]`, `${members} online` ,true)
+.addField(`💬 Channels`, `**${message.guild.channels.filter(c => c.type === 'category').size}** Categories | **${message.guild.channels.filter(c=> c.type === 'text').size}** Text | **${message.guild.channels.filter(c=> c.type === 'voice').size}** Voice` ,true)
+.addField(`💠 Verification Level`, vlevel[message.guild.verificationLevel] ,true)
+.addField(`👔 Roles`, message.guild.roles.size ,true)
+.addField(`📆 Created On`, message.guild.createdAt ,true)
+)
+}
 
 
 
