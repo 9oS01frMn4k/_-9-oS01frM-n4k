@@ -69,8 +69,8 @@ message.delete()
 message.channel.send(pollembed)
 
 .then(function (message, str) {
-     message.react('453541419966136321')
      message.react('453541489327472660')
+     message.react('453541419966136321')
    }).catch(function() {
 });
 }
