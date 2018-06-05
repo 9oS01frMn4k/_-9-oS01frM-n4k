@@ -51,7 +51,29 @@ return;
   } else {
       return;
   }
+if(cmd === `${prefix}poll`){
+let question = args.slice(0).join(" ");
 
+if (args.length === 0)
+return message.channel.send("poll <message>")
+
+if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("You dont have the Permission `MANAGE_SERVER`");
+
+const pollembed = new Discord.RichEmbed()
+.setTitle("A Poll Has Been Started!")
+.setColor(`#15f153`)
+.setDescription(`${question}`)
+.setFooter(`Poll Started By: ${message.author.username}`, `${message.author.avatarURL}`)
+message.delete()
+
+message.channel.send(pollembed)
+
+.then(function (message, str) {
+     message.react('453541419966136321')
+     message.react('453541489327472660')
+   }).catch(function() {
+});
+}
   if(cmd === `${prefix}serverinfo`){
 
     let sicon = message.guild.iconURL;
