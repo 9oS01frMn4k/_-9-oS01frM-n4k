@@ -38,8 +38,7 @@ if(message.content.split(' ')[0] == prefix + 'bcm') {
 return;
 }
       message.guild.members.forEach(m => {
-   if (message.author.id !== ("184706878876549131"))
-   if (message.author.id !== ("338385053556146187"))  
+   if (message.author.id !== ("184706878876549131"))  
     message.delete();
           var bc = new Discord.RichEmbed()
           .addField(' » Message: ', args)
@@ -51,6 +50,7 @@ return;
   } else {
       return;
   }
+  
 if(cmd === `${prefix}poll`){
 let question = args.slice(0).join(" ");
 
